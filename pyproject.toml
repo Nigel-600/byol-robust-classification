@@ -1,0 +1,29 @@
+[project]
+name = "comp3029-repo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.3"
+dependencies = [
+    "grad-cam==1.5.5",
+    "matplotlib==3.10.0",
+    "matplotlib-inline==0.2.2",
+    "numpy==2.0.2",
+    "pandas==2.2.2",
+    "pytorch-gradcam==0.2.1",
+    "scikit-image==0.25.2",
+    "scikit-learn==1.6.1",
+    "torch==2.10.0",
+    "torchinfo==1.8.0",
+    "torchsummary==1.5.1",
+    "torchvision==0.25.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu129", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+torchvision = [{ index = "pytorch-cu129", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
